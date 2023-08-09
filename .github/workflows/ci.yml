@@ -45,13 +45,14 @@ jobs:
           path: dist/*.whl
   release:
     name: "Release"
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifacts
         # will download and upack all files from the default artifact named 'artifact'
         uses: actions/download-artifact@v3
       - name: GH Release
-        uses: softprops/action-gh-release@v0.1
+        uses: softprops/action-gh-release@v0.1.15
         with:
           name: latest
           files: |
