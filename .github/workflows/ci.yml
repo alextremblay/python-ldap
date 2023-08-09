@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   distros:
-    name: "Ubuntu with Python ${{ matrix.python-version }}"
+    name: "${{ matrix.os }} with Python ${{ matrix.python-version }}"
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
